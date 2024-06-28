@@ -1,5 +1,5 @@
 
-import cover from "../assets/winner-removebg-preview.png"
+import cover from "../../assets/winner-removebg-preview.png"
 const Home = () => {
     return (
       <div>
@@ -31,7 +31,7 @@ const Home = () => {
                 <input
                   type="text"
                   placeholder="Search"
-                  className="input text-black input-bordered w-24 md:w-full"
+                  className="input  text-black input-bordered w-24 md:w-full"
                 />
               </div>
             </div>
@@ -41,14 +41,14 @@ const Home = () => {
         <div>
           <div className="hero bg-base-100 h-96">
             <div className="hero-content flex-col lg:flex-row-reverse">
-              <img
-                src={cover}
-                className="max-w-sm rounded-lg"
-              />
+              <img src={cover} className="max-w-sm rounded-lg" />
               <div>
-                <h1 className="text-5xl font-bold">Chance a Free Tripe winner!</h1>
+                <h1 className="text-5xl font-bold">
+                  Chance a Free Tripe winner!
+                </h1>
                 <p className="py-6">
-                  simple step to complete and win a Free Tripe form Travel Book . Lets start and grape the opportunity of free trip.
+                  simple step to complete and win a Free Tripe form Travel Book
+                  . Lets start and grape the opportunity of free trip.
                 </p>
                 <button className="btn btn-primary">Get Free!</button>
               </div>
