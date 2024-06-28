@@ -1,5 +1,6 @@
 
 import cover from "../../assets/winner-removebg-preview.png"
+import SuggestedPlace from "../SuggestedPlace/SuggestedPlace";
 const Home = () => {
     return (
       <div>
@@ -55,6 +56,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <SuggestedPlace></SuggestedPlace>
       </div>
     );
 };

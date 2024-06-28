@@ -4,6 +4,8 @@ import App from "../App";
 import Login from "../Components/Login/Login";
 import Home from "../Components/Home/Home";
 import Register from "../Components/Register/Register";
+import Trip from "../Components/Trip/Trip";
+import Review from "../Components/Review/Review";
 
 
 const Route = createBrowserRouter([
@@ -14,6 +16,14 @@ const Route = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path:"/trip",
+        element:<Trip></Trip>
+      },
+      {
+        path:"review",
+        element:<Review></Review>
       },
       {
         path: "/login",

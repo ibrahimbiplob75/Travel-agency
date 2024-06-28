@@ -18,12 +18,12 @@ const Header = () => {
         </Link>
       </li>
       <li>
-        <Link className="text-xl font-semibold font-sans" to="/mycart">
+        <Link className="text-xl font-semibold font-sans" to="/trip">
           Trip
         </Link>
       </li>
       <li>
-        <Link className="text-xl font-semibold font-sans" to="/product/list">
+        <Link className="text-xl font-semibold font-sans" to="/review">
           Review
         </Link>
       </li>
