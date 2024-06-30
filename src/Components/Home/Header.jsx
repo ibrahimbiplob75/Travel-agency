@@ -2,9 +2,22 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/Travel-removebg-preview.png"
 import { useContext } from "react";
 import { AuthProvider } from "../../AuthContext/AuthContext";
+import Swal from "sweetalert2";
 
 const Header = () => {
-  const {user}=useContext(AuthProvider)
+  const { user, logOut } = useContext(AuthProvider);
+
+  const handleLogout=()=>{
+    logOut().then(() => {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: " SignOut sucessfull",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    })
+  }
   const list = (
     <>
       <li>
@@ -128,7 +141,7 @@ const Header = () => {
                   <a>Settings</a>
                 </li>
                 <li>
-                  <a>Logout</a>
+                  <a onClick={()=>handleLogout()}>Logout</a>
                 </li>
               </ul>
             </div>

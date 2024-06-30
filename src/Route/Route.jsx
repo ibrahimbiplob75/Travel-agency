@@ -6,6 +6,7 @@ import Home from "../Components/Home/Home";
 import Register from "../Components/Register/Register";
 import Trip from "../Components/Trip/Trip";
 import Review from "../Components/Review/Review";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 
 
 const Route = createBrowserRouter([
@@ -18,12 +19,20 @@ const Route = createBrowserRouter([
         element: <Home />,
       },
       {
-        path:"/trip",
-        element:<Trip></Trip>
+        path: "/trip",
+        element: (
+          <PrivateRoute>
+            <Trip></Trip>
+          </PrivateRoute>
+        ),
       },
       {
-        path:"review",
-        element:<Review></Review>
+        path: "review",
+        element: (
+          <PrivateRoute>
+            <Review></Review>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
