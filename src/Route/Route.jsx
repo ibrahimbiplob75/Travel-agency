@@ -7,6 +7,8 @@ import Register from "../Components/Register/Register";
 import Trip from "../Components/Trip/Trip";
 import Review from "../Components/Review/Review";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import DashHome from "../Components/Dashboard/DashHome";
+import AddProduct from "../Components/Dashboard/AddProduct/AddProduct";
 
 
 const Route = createBrowserRouter([
@@ -44,6 +46,16 @@ const Route = createBrowserRouter([
       },
     ],
   },
+  {
+    path:"/dashboard",
+    element:<DashHome></DashHome>,
+    children:[
+      {
+        path:"/dashboard/add-product",
+        element:<AddProduct></AddProduct>
+      }
+    ]
+  }
 ]);
 
 export default Route;
