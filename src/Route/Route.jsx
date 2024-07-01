@@ -9,6 +9,7 @@ import Review from "../Components/Review/Review";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import DashHome from "../Components/Dashboard/DashHome";
 import AddProduct from "../Components/Dashboard/AddProduct/AddProduct";
+import ManageProduct from "../Components/Dashboard/ManageProduct/ManageProduct";
 
 
 const Route = createBrowserRouter([
@@ -53,6 +54,10 @@ const Route = createBrowserRouter([
       {
         path:"/dashboard/add-product",
         element:<AddProduct></AddProduct>
+      },
+      {
+        path:"/dashboard/manage-product",
+        element:<ManageProduct></ManageProduct>
       }
     ]
   }

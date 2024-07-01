@@ -9,14 +9,14 @@ const DashHome = () => {
         <div>
           <div className="drawer  lg:drawer-open ">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col mt-5 w-1/2 lg:w-full">
+            <div className="drawer-content flex flex-col mt-5  lg:w-full">
               <label
                 htmlFor="my-drawer-2"
-                className="btn btn-primary drawer-button lg:hidden"
+                className="btn btn-primary drawer-button w-1/2 lg:hidden"
               >
                 Open drawer
               </label>
-              <div className="m-10">
+              <div className="m-5">
                 <Outlet></Outlet>
               </div>
             </div>
@@ -32,7 +32,7 @@ const DashHome = () => {
                   <Link to={"/dashboard/add-product"}>Add Product</Link>
                 </li>
                 <li>
-                  <Link>Manage Product</Link>
+                  <Link to={"/dashboard/manage-product"}>Manage Product</Link>
                 </li>
                 <li>
                   <Link>Add category</Link>
