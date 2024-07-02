@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -28,7 +29,10 @@ const SingleProduct = ({ product, refetch }) => {
           <h2 className="card-title">{product_name}</h2>
           <p>{product_details}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Update</button>
+            <Link to={`/dashboard/update-product/${_id}`}>
+              <button className="btn btn-primary">Update</button>
+            </Link>
+
             <button onClick={() => handleDelete()} className="btn btn-error">
               Delete
             </button>

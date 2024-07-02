@@ -10,6 +10,7 @@ import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import DashHome from "../Components/Dashboard/DashHome";
 import AddProduct from "../Components/Dashboard/AddProduct/AddProduct";
 import ManageProduct from "../Components/Dashboard/ManageProduct/ManageProduct";
+import UpdateProduct from "../Components/Dashboard/ManageProduct/UpdateProduct";
 
 
 const Route = createBrowserRouter([
@@ -48,19 +49,25 @@ const Route = createBrowserRouter([
     ],
   },
   {
-    path:"/dashboard",
-    element:<DashHome></DashHome>,
-    children:[
+    path: "/dashboard",
+    element: <DashHome></DashHome>,
+    children: [
       {
-        path:"/dashboard/add-product",
-        element:<AddProduct></AddProduct>
+        path: "/dashboard/add-product",
+        element: <AddProduct></AddProduct>,
       },
       {
-        path:"/dashboard/manage-product",
-        element:<ManageProduct></ManageProduct>
-      }
-    ]
-  }
+        path: "/dashboard/manage-product",
+        element: <ManageProduct></ManageProduct>,
+      },
+      {
+        path: "/dashboard/update-product/:id",
+        element: <UpdateProduct></UpdateProduct>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/product/${params.id}`),
+      },
+    ],
+  },
 ]);
 
 export default Route;
