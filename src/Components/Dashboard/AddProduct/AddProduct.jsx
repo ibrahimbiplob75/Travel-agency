@@ -1,4 +1,5 @@
 
+import Swal from "sweetalert2";
 import Title from "../Title";
 
 
@@ -32,7 +33,17 @@ const AddProduct = () => {
         body: JSON.stringify(product),
       })
         .then((res) => res.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+          if (data.acknowledged) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: ` ${product_name} added sucessfull`,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        })
         .catch((error) => console.log(error));
 
     }

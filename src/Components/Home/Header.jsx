@@ -138,7 +138,7 @@ const Header = () => {
                   </a>
                 </li>
                 <li>
-                  <a>Settings</a>
+                  <Link to={"/dashboard"}>Dasboard</Link>
                 </li>
                 <li>
                   <a onClick={()=>handleLogout()}>Logout</a>
