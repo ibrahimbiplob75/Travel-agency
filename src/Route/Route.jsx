@@ -11,6 +11,7 @@ import DashHome from "../Components/Dashboard/DashHome";
 import AddProduct from "../Components/Dashboard/AddProduct/AddProduct";
 import ManageProduct from "../Components/Dashboard/ManageProduct/ManageProduct";
 import UpdateProduct from "../Components/Dashboard/ManageProduct/UpdateProduct";
+import axios from "axios";
 
 
 const Route = createBrowserRouter([
@@ -64,7 +65,9 @@ const Route = createBrowserRouter([
         path: "/dashboard/update-product/:id",
         element: <UpdateProduct></UpdateProduct>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/product/${params.id}`),
+          axios.get(`http://localhost:3000/product/${params.id}`, {
+            withCredentials: true,
+          }),
       },
     ],
   },

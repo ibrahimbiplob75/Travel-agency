@@ -1,6 +1,7 @@
 
 import Swal from "sweetalert2";
 import Title from "../Title";
+import axios from "axios";
 
 
 const AddProduct = () => {
@@ -25,16 +26,12 @@ const AddProduct = () => {
         };
         console.log(product)
         
-      fetch("http://localhost:3000/product", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(product),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.acknowledged) {
+      axios
+        .post("http://localhost:3000/product", product, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          if (res.data.acknowledged) {
             Swal.fire({
               position: "top-end",
               icon: "success",

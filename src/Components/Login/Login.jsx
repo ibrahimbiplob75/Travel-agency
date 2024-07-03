@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import  { AuthProvider } from "../../AuthContext/AuthContext";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 
 const Login = () => {
@@ -26,6 +27,15 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        axios
+          .post(
+            "http://localhost:3000/jwt",
+            { email },
+            {
+              withCredentials: true,
+            }
+          )
+          .then((res) => console.log(res));
       })
       .catch((error) => {
         const errorCode = error.code;

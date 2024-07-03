@@ -6,7 +6,9 @@ const ProductHook = () => {
     const {data,isLoading,isFetching,refetch} = useQuery({
       queryKey: ["product"],
       queryFn: async () => {
-        const product = await fetch("http://localhost:3000/product");
+        const product = await fetch("http://localhost:3000/product", {
+          withCredentials: true,
+        });
         return product.json();
       },
     });

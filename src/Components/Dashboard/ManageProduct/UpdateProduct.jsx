@@ -30,12 +30,13 @@ const UpdateProduct = () => {
         product_details,
       };
 
-      axios.put(`http://localhost:3000/product/${_id}`, 
-          Updateproduct,
-        )
+      axios
+        .put(`http://localhost:3000/product/${_id}`, Updateproduct, {
+          withCredentials: true,
+        })
         .then((res) => {
-            console.log(res)
-          if (res.data.modifiedCount>0) {
+          console.log(res);
+          if (res.data.modifiedCount > 0) {
             Swal.fire({
               position: "top-end",
               icon: "success",

@@ -6,18 +6,20 @@ import Swal from "sweetalert2";
 const SingleProduct = ({ product, refetch }) => {
   const { _id, product_name, product_image, product_details } = product;
   const handleDelete = () => {
-    axios.delete(`http://localhost:3000/product/${_id}`).then((res) => {
-      if (res.data.deletedCount > 0) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: ` ${product_name} deleted sucessfull`,
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        refetch()
-      }
-    });
+    axios
+      .delete(`http://localhost:3000/product/${_id}`, { withCredentials: true })
+      .then((res) => {
+        if (res.data.deletedCount > 0) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: ` ${product_name} deleted sucessfull`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          refetch();
+        }
+      });
   };
   return (
     <div>
